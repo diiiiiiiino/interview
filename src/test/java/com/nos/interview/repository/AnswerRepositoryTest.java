@@ -1,8 +1,9 @@
 package com.nos.interview.repository;
 
 import com.nos.interview.entity.Answer;
-import com.nos.interview.entity.Question;
+import com.nos.interview.entity.Quiz;
 import com.nos.interview.entity.Student;
+import com.nos.interview.enumeration.LargeCategory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,9 +13,10 @@ public class AnswerRepositoryTest extends BaseRepositoryTest {
 
     @Test
     void createAnswer() {
-        Question question = Question.builder()
+        Quiz quiz = Quiz.builder()
                 .question("질문")
                 .answer("답변")
+                .largeCategory(LargeCategory.COMPUTER)
                 .displayOrder(1)
                 .build();
 
@@ -24,7 +26,7 @@ public class AnswerRepositoryTest extends BaseRepositoryTest {
                 .build();
 
         Answer answer = Answer.builder()
-                .question(question)
+                .quiz(quiz)
                 .student(student)
                 .answer("답변")
                 .build();

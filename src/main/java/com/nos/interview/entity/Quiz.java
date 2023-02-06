@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Question {
+public class Quiz {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
