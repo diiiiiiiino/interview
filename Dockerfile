@@ -17,3 +17,4 @@ COPY --from=builder layer/snapshot-dependencies/ ./
 COPY --from=builder layer/application/ ./
 
 ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
+ 
