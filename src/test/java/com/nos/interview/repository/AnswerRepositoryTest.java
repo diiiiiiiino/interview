@@ -2,7 +2,7 @@ package com.nos.interview.repository;
 
 import com.nos.interview.entity.Answer;
 import com.nos.interview.entity.Quiz;
-import com.nos.interview.entity.Student;
+import com.nos.interview.entity.Player;
 import com.nos.interview.enumeration.LargeCategory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +20,14 @@ public class AnswerRepositoryTest extends BaseRepositoryTest {
                 .displayOrder(1)
                 .build();
 
-        Student student = Student.builder()
+        Player player = Player.builder()
                 .email("eodyddnjs@naver.com")
                 .name("노은석")
                 .build();
 
         Answer answer = Answer.builder()
                 .quiz(quiz)
-                .student(student)
+                .player(player)
                 .answer("답변")
                 .build();
 

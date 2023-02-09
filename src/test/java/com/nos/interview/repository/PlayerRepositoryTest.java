@@ -1,21 +1,21 @@
 package com.nos.interview.repository;
 
-import com.nos.interview.entity.Student;
+import com.nos.interview.entity.Player;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class StudentRepositoryTest extends BaseRepositoryTest {
+public class PlayerRepositoryTest extends BaseRepositoryTest {
     @Autowired
-    StudentRepository studentRepository;
+    PlayerRepository playerRepository;
 
     @DisplayName("1. 학생 생성")
     @Test
     void createStudent(){
-        Student student = Student.builder()
+        Player player = Player.builder()
                 .email("eodyddnjs@naver.com")
                 .name("노은석")
                 .build();
-        studentRepository.save(student);
+        playerRepository.save(player);
     }
 }

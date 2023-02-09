@@ -1,5 +1,6 @@
 package com.nos.interview.entity;
 
+import com.nos.interview.dto.PlayerDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+public class Player extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
@@ -21,4 +22,11 @@ public class Student {
 
     @Column(nullable = false, length = 10)
     String name;
+
+    public static Player of(PlayerDto playerDto){
+        return Player.builder()
+                .email(playerDto.getEmail())
+                .name(playerDto.getName())
+                .build();
+    }
 }

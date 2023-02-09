@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Answer {
+public class Answer extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
@@ -22,7 +22,7 @@ public class Answer {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id")
-    Student student;
+    Player player;
 
     @Column(nullable = false, length = 1000)
     String answer;

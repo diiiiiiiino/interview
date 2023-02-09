@@ -1,5 +1,6 @@
 package com.nos.interview.entity;
 
+import com.nos.interview.dto.QuizDto;
 import com.nos.interview.enumeration.LargeCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Quiz {
+public class Quiz extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
@@ -24,8 +25,17 @@ public class Quiz {
     @Column(nullable = false, length = 500)
     String question;
 
-    @Column(nullable = false, length = 1000)
+    @Column(length = 1000)
     String answer;
 
     Integer displayOrder;
+
+    public static Quiz of(QuizDto quizDto){
+        return Quiz.builder()
+                .largeCategory(quizDto.getLargeCategory())
+                .question(quizDto.getQuestion())
+                .answer(quizDto.getAnswer())
+                .displayOrder(quizDto.getDisplayOrder())
+                .build();
+    }
 }

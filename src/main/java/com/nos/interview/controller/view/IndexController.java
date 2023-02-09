@@ -1,4 +1,4 @@
-package com.nos.interview.controller;
+package com.nos.interview.controller.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
