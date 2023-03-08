@@ -3,6 +3,7 @@ package com.nos.interview.service;
 import com.nos.interview.dto.QuizDto;
 import com.nos.interview.enumeration.LargeCategory;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface QuizService {

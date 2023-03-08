@@ -5,10 +5,13 @@ import com.nos.interview.entity.Quiz;
 import com.nos.interview.enumeration.LargeCategory;
 import com.nos.interview.repository.QuizRepository;
 import com.nos.interview.service.QuizService;
+import com.nos.interview.service.TransactionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
